@@ -13,51 +13,39 @@ loop
 // let playerChoice = rock || paper || scissors;
 // let computerChoice = rock || paper || scissors;
 
-
-
-const choices = ['rock', 'paper', 'scissors'];
-
-const randomIndex = Math.floor(Math.random()*3)
-
-const choice = choices[randomIndex];
-
-let playerChoice = ;
-let computerChoice = choices;
-
-
 function playGame(playerChoice) {
     playerChoice = playerChoice.toLowerCase();
-}
+    const computerChoice = getComputerChoice();
 
-
-
-
-if (playerChoice === computerChoice) {
-    console.log('You tied')
-}
-
-if (playerChoice === 'rock' && computerChoice === 'paper') {
-    console.log('You Lose, paper beats rock'); {
-        if (computerChoice === 'scissors') {
-            console.log ('You Win, rock beats scissors')
+    if (playerChoice === 'rock' && computerChoice === 'paper') {
+        console.log('You Lose, paper beats rock');
+    } 
+        else if (computerChoice === 'scissors') {
+        console.log('You Win, rock beats scissors');
         }
-    }
-}
 
-else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-    console.log('You Lose, scissors beats paper'); {
-        if (computerChoice === 'rock') {
-            console.log ('You Win, paper beats rock')
+    if (playerChoice === 'paper' && computerChoice === 'scissors') {
+        console.log('You Lose, scissors beats paper'); 
+    } 
+        else if (computerChoice === 'rock') {
+        console.log ('You Win, paper beats rock')
         }
-    }
-}
-
-else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-    console.log('You Lose, rock beats scissors'); {
-        if (computerChoice === 'paper') {
-            console.log ('You Win, scissors beats paper')
+    
+    if (playerChoice === 'scissors' && computerChoice === 'rock') {
+        console.log('You Lose, rock beats scissors');
+    } 
+        else if (computerChoice === 'paper') {
+        console.log ('You Win, scissors beats paper')
         }
-    }
+
+    if (playerChoice === computerChoice) {
+        console.log('You tied');
+        }
 }
 
-
+function getComputerChoice() {
+    const compChoices = ['rock', 'paper', 'scissors'];
+    const randomIndex = Math.floor(Math.random()*3)
+    const compChoice = compChoices[randomIndex];
+    return compChoice
+}
