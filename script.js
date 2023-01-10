@@ -10,42 +10,56 @@ There will be a counter to keep track of wins and losses
 Reset the choices back to default and wait for player to choose again
 loop 
 */
-// let playerChoice = rock || paper || scissors;
-// let computerChoice = rock || paper || scissors;
+
+(function() {
+    const rockButton = document.querySelector(".rock");
+    const paperButton = document.querySelector(".paper");
+    const scissorsButton = document.querySelector(".scissors");
+  
+rockButton.addEventListener("click", function() {
+    playGame("rock");
+});
+
+paperButton.addEventListener("click", function() {
+    playGame("paper");   
+});
+
+scissorsButton.addEventListener("click", function() {
+    playGame("scissors");   
+});
 
 function playGame(playerChoice) {
-    playerChoice = playerChoice.toLowerCase();
     const computerChoice = getComputerChoice();
+
+    if (playerChoice === computerChoice) {
+        console.log('You tied');
+        }
 
     if (playerChoice === 'rock' && computerChoice === 'paper') {
         console.log('You Lose, paper beats rock');
     } 
-        else if (computerChoice === 'scissors') {
+        else if (playerChoice === 'rock' && computerChoice === 'scissors') {
         console.log('You Win, rock beats scissors');
         }
 
     if (playerChoice === 'paper' && computerChoice === 'scissors') {
         console.log('You Lose, scissors beats paper'); 
     } 
-        else if (computerChoice === 'rock') {
+        else if (playerChoice === 'paper' && computerChoice === 'rock') {
         console.log ('You Win, paper beats rock')
         }
     
     if (playerChoice === 'scissors' && computerChoice === 'rock') {
         console.log('You Lose, rock beats scissors');
     } 
-        else if (computerChoice === 'paper') {
+        else if (playerChoice === 'scissors' && computerChoice === 'paper') {
         console.log ('You Win, scissors beats paper')
-        }
-
-    if (playerChoice === computerChoice) {
-        console.log('You tied');
         }
 }
 
 function getComputerChoice() {
     const compChoices = ['rock', 'paper', 'scissors'];
-    const randomIndex = Math.floor(Math.random()*3)
+    const randomIndex = Math.floor(Math.random()*3);
     const compChoice = compChoices[randomIndex];
     return compChoice
 }
