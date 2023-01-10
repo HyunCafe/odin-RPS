@@ -1,17 +1,17 @@
-ul {
+
+
+  ul {
     display:flex;
     justify-content: center;
-    align-items: center;
-}
+    }
 
-li {
+    li {
     display: flex;
     margin:1em;
     list-style: none;
-    border:2px red solid;
     font-size:1rem;
-}
+    }
 
-button {
+    button {
     font-size: 5rem;
-}
+    }

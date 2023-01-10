@@ -10,8 +10,6 @@ There will be a counter to keep track of wins and losses
 Reset the choices back to default and wait for player to choose again
 loop 
 */
-
-(function() {
     const rockButton = document.querySelector(".rock");
     const paperButton = document.querySelector(".paper");
     const scissorsButton = document.querySelector(".scissors");
@@ -32,34 +30,39 @@ function playGame(playerChoice) {
     const computerChoice = getComputerChoice();
 
     if (playerChoice === computerChoice) {
-        console.log('You tied');
+        displayResult('You tied');
         }
 
     if (playerChoice === 'rock' && computerChoice === 'paper') {
-        console.log('You Lose, paper beats rock');
+        displayResult('You Lose, paper beats rock');
     } 
         else if (playerChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('You Win, rock beats scissors');
+        displayResult('You Win, rock beats scissors');
         }
 
     if (playerChoice === 'paper' && computerChoice === 'scissors') {
-        console.log('You Lose, scissors beats paper'); 
+        displayResult('You Lose, scissors beats paper'); 
     } 
         else if (playerChoice === 'paper' && computerChoice === 'rock') {
-        console.log ('You Win, paper beats rock')
+        displayResult ('You Win, paper beats rock')
         }
     
     if (playerChoice === 'scissors' && computerChoice === 'rock') {
-        console.log('You Lose, rock beats scissors');
+        displayResult('You Lose, rock beats scissors');
     } 
         else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-        console.log ('You Win, scissors beats paper')
+        displayResult ('You Win, scissors beats paper')
         }
 }
+
+function displayResult(result) {
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = result;
+  }
 
 function getComputerChoice() {
     const compChoices = ['rock', 'paper', 'scissors'];
     const randomIndex = Math.floor(Math.random()*3);
     const compChoice = compChoices[randomIndex];
-    return compChoice
+    return compChoice;
 }
