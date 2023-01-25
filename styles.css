@@ -1,9 +1,12 @@
 body {
+  background-image: url(assests/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: black;
 }
 
 .container {
@@ -17,8 +20,8 @@ body {
   width: 18em;
   height: 23em;
   margin: 0 3em;
+  opacity: .95;
   background-color:rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px); 
   cursor: pointer;
   transition: 1.2s ease-in-out; /* Transition speed */
   transform-style: preserve-3d; /* Preserves 3d container while moving */
@@ -37,7 +40,7 @@ body {
   backface-visibility: hidden; /* Hides the back of Card */
   transition: 1.2s ease-in-out; /* Transition speed */
   -webkit-box-reflect: below 0
-    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.6)); /* Cool reflection of cards below */
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.8)); /* Cool reflection of cards below */
 }
 
 .card img {
@@ -45,5 +48,3 @@ body {
   height: 23em;
   object-fit: cover;
 }
-
-
