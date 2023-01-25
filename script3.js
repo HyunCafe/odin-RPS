@@ -13,7 +13,7 @@ function displayResult(result) {
     resultElement.innerHTML = result;
     }
 
-const choices = ['rock', 'paper', 'scissors'];
+const choices = ['#rock', '#paper', '#scissors'];
 const computerChoice = choices[Math.floor(Math.random()*choices.length)];
 const playerChoice = elements
 const rules = {

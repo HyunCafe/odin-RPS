@@ -1,23 +1,22 @@
 body {
   background-image: url(assests/background.jpg);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
 }
 
 .site_header {
-  position:absolute;
+  position: absolute;
   top: 2em;
   align-self: center;
   text-align: center;
   font-size: 2em;
-  color:white;
-  margin:auto;
+  color: white;
+  margin: auto;
   transition: 1.4s ease-in-out; /* Transition speed */
 }
 
@@ -32,8 +31,8 @@ body {
   width: 18em;
   height: 23em;
   margin: 0 3em;
-  opacity: .95;
-  background-color:rgba(255, 255, 255, 0.5);
+  opacity: 0.95;
+  background-color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: 1.2s ease-in-out; /* Transition speed */
   transform-style: preserve-3d; /* Preserves 3d container while moving */
@@ -60,3 +59,28 @@ body {
   height: 23em;
   object-fit: cover;
 }
+#result {
+  position: absolute;
+  top: 1em;
+  align-self: center;
+  text-align: center;
+  color: white;
+  font-size: 4em;
+}
+
+/* Thinking about changing the effect to a shaking instead of flip transition */
+
+/* Media Queries Need to work on this more when I reach Responsive section of Odin Project
+@media only screen and (max-width: 768px) {
+  .site_header {
+    font-size: 1.5em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+  }
+} */
