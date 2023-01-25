@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Document</title>
-</head>
-<body>
-    <ul>
-        <li><button id="rock">Rock</button></li>
-        <li><button id="paper">Paper</button></li>
-        <li><button id="scissors">Scissors</button></li>
-    </ul>
+  </head>
+
+  <body>
+    <!-- Display Match Result -->
     <p id="result"></p>
+
+    <!-- Main Section of Game -->
+    <section>
+      <div class="container">
+        <div class="card" id="rock">
+          <div class="card__front">
+            <img src="assests/rock.jpg" />
+          </div>
+        </div>
+        <div class="card" id="paper">
+          <div class="card__front">
+            <img src="assests/paper.jpg" />
+          </div>
+        </div>
+        <div class="card" id="scissors">
+          <div class="card__front">
+            <img src="assests/scissors.jpg" />
+        </div>
+      </div>
+    </section>
+
     <script src="script3.js"></script>
-</body>
+  </body>
 </html>
