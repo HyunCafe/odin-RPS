@@ -23,6 +23,13 @@ function displayResult(result) {
     setTimeout(function() {
         const resultElement = document.getElementById("result");
         resultElement.textContent = result;
+        if (result === 'Player Wins!') {
+            resultElement.style.color = "green";
+        } else if (result === 'Computer Wins!') {
+            resultElement.style.color = "red";
+        } else {
+            resultElement.style.color = "blue";
+        }
         setTimeout(function() {
             resultElement.textContent = "";
         }, 1000);
