@@ -7,6 +7,18 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  
+}
+
+.site_header {
+  position:absolute;
+  top: 2em;
+  align-self: center;
+  text-align: center;
+  font-size: 2em;
+  color:white;
+  margin:auto;
+  transition: 1.4s ease-in-out; /* Transition speed */
 }
 
 .container {
