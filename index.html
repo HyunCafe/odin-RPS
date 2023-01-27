@@ -14,24 +14,30 @@
     <p id="result"></p>
 
     <!-- Main Section of Game -->
-    <section>
+    <section class="main_container">
       <div class="container">
-        <div class="card" id="rock">
+        <div class="card" id="rock" onclick="rotateCard(this)">
           <div class="card__front">
             <img src="assests/rock.jpg" />
           </div>
         </div>
-        <div class="card" id="paper">
+        <div class="card" id="paper" onclick="rotateCard(this)">
           <div class="card__front">
             <img src="assests/paper.jpg" />
           </div>
         </div>
-        <div class="card" id="scissors">
+        <div class="card" id="scissors" onclick="rotateCard(this)">
           <div class="card__front">
             <img src="assests/scissors.jpg" />
         </div>
       </div>
-    </section>
+</section>
+
+<div class="tracker">
+    <p id="tracker_wins">test wins</p>
+    <p id="tracker_losses">test loss</p>
+    <p id="tracker_ties">test ties</p>
+    </div>
 
     <script src="scriptFinal.js"></script>
   </body>
