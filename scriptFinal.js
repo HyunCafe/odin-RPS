@@ -14,7 +14,7 @@ playerChoices.forEach((playerChoice) => {
 
 // Game Logic
 function checkWinner(playerChoice, compChoice) {
-  if (rules.playerChoice.beats === compChoice) {
+  if (rules[playerChoice].beats === compChoice) {
     return "Player Wins!";
   } else if (playerChoice === compChoice) {
     return "It's a Tie!";
@@ -22,10 +22,9 @@ function checkWinner(playerChoice, compChoice) {
     return "Computer Wins!";
   }
 }
-
 // Display Results Logic
 function displayResult(result) {
-  setTimeout(function () {
+  setTimeout(() => {
     const resultElement = document.getElementById("result");
     resultElement.textContent = result;
     if (result === "Player Wins!") {
@@ -51,7 +50,8 @@ let gamesPlayed = 0;
 
 function playGame() {
   const playerChoice = this.id;
-  const compChoice = Math.floor(Math.random() * compChoices.length);
+  const compChoice =
+    compChoices[Math.floor(Math.random() * compChoices.length)];
   let result = checkWinner(playerChoice, compChoice);
   displayResult(result);
 
