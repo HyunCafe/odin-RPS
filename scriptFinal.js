@@ -14,7 +14,7 @@ playerChoices.forEach((playerChoice) => {
 
 // Game Logic
 function checkWinner(playerChoice, compChoice) {
-  if (rules[playerChoice]["beats"] === compChoice) {
+  if (rules.playerChoice.beats === compChoice) {
     return "Player Wins!";
   } else if (playerChoice === compChoice) {
     return "It's a Tie!";
@@ -22,6 +22,7 @@ function checkWinner(playerChoice, compChoice) {
     return "Computer Wins!";
   }
 }
+
 // Display Results Logic
 function displayResult(result) {
   setTimeout(function () {
