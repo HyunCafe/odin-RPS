@@ -4,13 +4,8 @@ const rules = {
   paper: { beats: "rock", losesTo: "scissors" },
   scissors: { beats: "paper", losesTo: "rock" },
 };
-
-// Event Listener
-const compChoices = ["rock", "paper", "scissors"];
-const playerChoices = document.querySelectorAll("#rock, #paper, #scissors");
-playerChoices.forEach((playerChoice) => {
-  playerChoice.addEventListener("click", playGame);
-});
+const compSelection = ["rock", "paper", "scissors"];
+const playerSelection = document.querySelectorAll("#rock, #paper, #scissors");
 
 // Game Logic
 function checkWinner(playerChoice, compChoice) {
@@ -40,18 +35,13 @@ function displayResult(result) {
   }, 200);
 }
 
-// Rotate Card on Click Animation
-function rotateCard(card) {
-  card.classList.toggle("rotate");
-}
-
-// Play game function, display tracker, and display result
+// Play game function
 let gamesPlayed = 0;
 
 function playGame() {
   const playerChoice = this.id;
   const compChoice =
-    compChoices[Math.floor(Math.random() * compChoices.length)];
+    compSelection[Math.floor(Math.random() * compSelection.length)];
   let result = checkWinner(playerChoice, compChoice);
   displayResult(result);
 
@@ -60,6 +50,16 @@ function playGame() {
     // reset game here, for example resetting gamesPlayed to 0
     gamesPlayed = 0;
   }
+}
+
+// Event Listener
+playerSelection.forEach((playerChoice) => {
+  playerChoice.addEventListener("click", playGame);
+});
+
+// Rotate Card on Click Animation
+function rotateCard(card) {
+  card.classList.toggle("rotate");
 }
 
 // Play a special animation/video/gif for each individual win
