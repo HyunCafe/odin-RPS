@@ -1,4 +1,4 @@
-// Rules of game
+// Rules
 const rules = {
   rock: { beats: "scissors", losesTo: "paper" },
   paper: { beats: "rock", losesTo: "scissors" },
@@ -11,27 +11,30 @@ function displayResult(result) {
   resultElement.textContent = result;
 }
 
-// Function to play game and Game Logic
-function playGame() {
-  // Player Selection
-  const playerChoice = this.id;
+// Player Choice and event listen for game
+const playerChoices = document.querySelectorAll("#rock, #paper, #scissors");
+playerChoices.forEach((selection) => {
+  selection.addEventListener("click", playGame);
+});
 
-  // Computer Selection
+// Play Game function
+function playGame() {
+  const playerSelection = this.id;
+
+  // Computer Logic
   const compChoices = ["rock", "paper", "scissors"];
   const compSelection =
     compChoices[Math.floor(Math.random() * compChoices.length)];
 
-  if (playerChoice === compSelection) {
-    displayResult("You Tied!");
-  } else if (rules[playerChoice].beats === compSelection) {
-    displayResult("You Win!");
-  } else {
-    displayResult("You Lose!");
+  // Check Winner Function
+  function checkWinner() {
+    if (playerSelection === compSelection) {
+      displayResult("You Tied");
+    } else if (rules[playerSelection].beats === compSelection) {
+      displayResult("You Win");
+    } else {
+      displayResult("You Lose");
+    }
   }
+  checkWinner();
 }
-
-// Add Event Listeners for Player Selection
-const playerSelections = document.querySelectorAll("#rock, #paper, #scissors");
-playerSelections.forEach((selection) => {
-  selection.addEventListener("click", playGame);
-});
