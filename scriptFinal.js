@@ -87,3 +87,9 @@ function rotateCard(card) {
 }
 
 // Play a special animation/video/gif for each individual win
+
+
+
+// Bug 1: need work around for the delay in result when spamming games played
+
+// Feat 1: Add feature when 10 games are completed, overall Winner or Loser or tie will be displayed
