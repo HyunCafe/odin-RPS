@@ -17,6 +17,7 @@ function checkWinner(playerChoice, compChoice) {
     return "Computer Wins!";
   }
 }
+
 // Display Results Logic
 function displayResult(result) {
   setTimeout(() => {
@@ -29,9 +30,10 @@ function displayResult(result) {
     } else {
       resultElement.style.color = "blue";
     }
-    // setTimeout(function() {
-    //     resultElement.textContent = ""; // bug here causing shifting of container cards when playing game
-    // }, 900);
+
+    setTimeout(function () {
+      resultElement.textContent = "";
+    }, 900);
   }, 200);
 }
 
