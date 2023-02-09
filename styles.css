@@ -1,11 +1,11 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background-image: url(assests/background.jpg);
+  background-image: url(assets/background.jpg);
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -26,7 +26,6 @@ body {
   margin: auto;
   transition: 1.4s ease-in-out; /* Transition speed */
 }
-
 
 .container {
   margin-top: 2em;
@@ -80,11 +79,11 @@ body {
   gap: 4em;
 }
 
-
 #result {
-  border: 2px red solid;
   position: relative;
-  top: 10em;
+  top: 11em;
+  height: 70px;
+  line-height: 30px;
   align-self: center;
   text-align: center;
   color: white;
