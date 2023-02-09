@@ -73,10 +73,21 @@ body {
   margin-top: 6em;
   display: flex;
   text-align: center;
-  border: 2px white solid;
   color: white;
   font-size: 2rem;
   gap: 4em;
+}
+
+#tracker_wins {
+  color: green;
+}
+
+#tracker_losses {
+  color:red;
+}
+
+#tracker_ties {
+  color:blue;
 }
 
 #result {

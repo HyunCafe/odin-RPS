@@ -1,4 +1,3 @@
-// Rules
 const rules = {
   rock: { beats: "scissors", losesTo: "paper" },
   paper: { beats: "rock", losesTo: "scissors" },
@@ -33,8 +32,8 @@ function displayResult(result) {
 
     setTimeout(function () {
       resultElement.textContent = "";
-    }, 900);
-  }, 200);
+    }, 600);
+  }, 400);
 }
 
 // Play game function
@@ -46,11 +45,15 @@ function playGame() {
     compSelection[Math.floor(Math.random() * compSelection.length)];
   let result = checkWinner(playerChoice, compChoice);
   displayResult(result);
+  winTracker(result);
 
   gamesPlayed++;
-  if (gamesPlayed === 5) {
+  if (gamesPlayed === 10) {
     // reset game here, for example resetting gamesPlayed to 0
     gamesPlayed = 0;
+    wins = 0;
+    losses = 0;
+    ties = 0;
   }
 }
 
@@ -58,6 +61,25 @@ function playGame() {
 playerSelection.forEach((playerChoice) => {
   playerChoice.addEventListener("click", playGame);
 });
+
+// Display Win Tracker
+let wins = 0;
+let losses = 0;
+let ties = 0;
+
+function winTracker(result) {
+  if (result === "Player Wins!") {
+    wins++;
+  } else if (result === "Computer Wins!") {
+    losses++;
+  } else {
+    ties++;
+  }
+
+  document.getElementById("tracker_wins").textContent = `Wins: ${wins}`;
+  document.getElementById("tracker_losses").textContent = `Losses: ${losses}`;
+  document.getElementById("tracker_ties").textContent = `Ties: ${ties}`;
+}
 
 // Rotate Card on Click Animation
 function rotateCard(card) {
