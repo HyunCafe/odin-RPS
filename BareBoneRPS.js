@@ -12,7 +12,7 @@ function displayResult(result) {
 }
 
 // Computer Logic
-function getCompSelection() {
+function compSelection() {
   const compChoices = ["rock", "paper", "scissors"];
   return compChoices[Math.floor(Math.random() * compChoices.length)];
 }
@@ -33,7 +33,7 @@ const playerChoices = document.querySelectorAll("#rock, #paper, #scissors");
 playerChoices.forEach((selection) => {
   selection.addEventListener("click", () => {
     const playerSelection = selection.id;
-    const compSelection = getCompSelection();
+    const compSelection = compSelection();
     checkWinner(playerSelection, compSelection);
   });
 });
