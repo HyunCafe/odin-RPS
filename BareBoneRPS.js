@@ -1,39 +1,54 @@
-// Rules
-const rules = {
-  rock: { beats: "scissors", losesTo: "paper" },
-  paper: { beats: "rock", losesTo: "scissors" },
-  scissors: { beats: "paper", losesTo: "rock" },
+// Define enum for RPS options
+const RPS = {
+  ROCK: "rock",
+  PAPER: "paper",
+  SCISSORS: "scissors",
 };
 
-// Display Function
-function displayResult(result) {
-  const resultElement = document.getElementById("result");
-  resultElement.textContent = result;
-}
+// Define rules object
+const RULES = {
+  [RPS.ROCK]: { beats: RPS.SCISSORS, losesTo: RPS.PAPER },
+  [RPS.PAPER]: { beats: RPS.ROCK, losesTo: RPS.SCISSORS },
+  [RPS.SCISSORS]: { beats: RPS.PAPER, losesTo: RPS.ROCK },
+};
 
-// Computer Logic
-function compSelection() {
-  const compChoices = ["rock", "paper", "scissors"];
-  return compChoices[Math.floor(Math.random() * compChoices.length)];
-}
+// Define displayResult function
+const displayResult = (result) => {
+  document.getElementById("result").textContent = result;
+};
 
-// Check Winner Function
-function checkWinner(playerSelection, compSelection) {
+// Define compSelection function
+const compSelection = () => {
+  return Object.values(RPS)[
+    Math.floor(Math.random() * Object.values(RPS).length)
+  ];
+};
+
+// Define checkWinner function
+const checkWinner = (playerSelection, compSelection) => {
   if (playerSelection === compSelection) {
     displayResult("You Tied");
-  } else if (rules[playerSelection].beats === compSelection) {
+  } else if (RULES[playerSelection].beats === compSelection) {
     displayResult("You Win");
   } else {
     displayResult("You Lose");
   }
-}
+};
 
-// Player Choice and event listen for game
+// Define function to playGame
+const playGame = (choice) => {
+  const playerSelection = choice.id;
+  const compSelection = compSelection();
+  checkWinner(playerSelection, compSelection);
+};
+
+// Add event listeners to player choices
 const playerChoices = document.querySelectorAll("#rock, #paper, #scissors");
-playerChoices.forEach((selection) => {
-  selection.addEventListener("click", () => {
-    const playerSelection = selection.id;
-    const compSelection = compSelection();
-    checkWinner(playerSelection, compSelection);
+playerChoices.forEach((choice) => {
+  choice.addEventListener("click", () => {
+    playGame(choice);
   });
 });
+
+// Add enum to window object for easy access during testing
+window.RPS = RPS;
