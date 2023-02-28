@@ -18,7 +18,7 @@ const displayResult = (result) => {
 };
 
 // Define compSelection function
-const compSelection = () => {
+const getCompSelection = () => {
   return Object.values(RPS)[
     Math.floor(Math.random() * Object.values(RPS).length)
   ];
@@ -38,7 +38,7 @@ const checkWinner = (playerSelection, compSelection) => {
 // Define function to playGame
 const playGame = (choice) => {
   const playerSelection = choice.id;
-  const compSelection = compSelection();
+  const compSelection = getCompSelection();
   checkWinner(playerSelection, compSelection);
 };
 
