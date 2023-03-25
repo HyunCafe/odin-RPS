@@ -1,6 +1,4 @@
-# odin-RPS
-
-odin project JS 1
+# odin-RPS (3.5 Weeks into my coding journey)
 
 All odin projects are built from scratch
 
